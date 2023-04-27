@@ -1,0 +1,20 @@
+<script setup lang="ts">
+
+</script>
+<template>
+  <div class="page">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>
+<style lang="scss">
+.page {
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  color: black;
+  margin: 0 auto;
+  position: relative;
+}
+</style>
