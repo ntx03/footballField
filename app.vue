@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 </script>
+
 <template>
   <div class="page">
     <NuxtLayout>
@@ -8,13 +9,16 @@
     </NuxtLayout>
   </div>
 </template>
+
 <style lang="scss">
 .page {
-  background-color: white;
+  background-color: $black;
   width: 100%;
   min-height: 100vh;
-  color: black;
+  color: $whitetext;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 </style>
