@@ -1,7 +1,10 @@
+import { mainNews1, mainNews2, mainNews3 } from '../importPhoto';
+
 export const phoneNumber = [
   { text: '+7 (495) 888-32-11', link: '+74958883211' },
   { text: '+7 (495) 032-25-18', link: '+74950322518' },
 ];
+
 export const menuItem = [
   {
     name: 'Подогрев полей',
@@ -24,6 +27,7 @@ export const menuItem = [
     link: '/',
   },
 ];
+
 export const headerDataText = [
   {
     title:
@@ -41,5 +45,30 @@ export const headerDataText = [
 ];
 
 export const email = 'fespo@gmail.com';
+
 export const adress =
   'г. Москва, ул 3-я Тверская-Ямская,пер. Александра Невского д. 32';
+
+export const newsData = [
+  {
+    imageLink: mainNews1,
+    descriptionNews:
+      'Первая в России система для стандартного футбольного поля размерами 110 х72 метра',
+    date: '4 февраля 2023',
+    alt: 'мальчик с мячом',
+  },
+  {
+    imageLink: mainNews2,
+    descriptionNews:
+      'Первая в России система для стандартного футбольного поля размерами 110 х72 метра',
+    date: '4 февраля 2023',
+    alt: 'мальчик с мячом',
+  },
+  {
+    imageLink: mainNews3,
+    descriptionNews:
+      'Первая в России система для стандартного футбольного поля размерами 110 х72 метра',
+    date: '4 февраля 2023',
+    alt: 'мальчик с мячом',
+  },
+];
