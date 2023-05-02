@@ -1,4 +1,5 @@
 import { mainNews1, mainNews2, mainNews3 } from '../importPhoto';
+import main2 from '../../assets/images/hotFieldsPage/main2.png';
 
 export const phoneNumber = [
   { text: '+7 (495) 888-32-11', link: '+74958883211' },
@@ -8,7 +9,7 @@ export const phoneNumber = [
 export const menuItem = [
   {
     name: 'Подогрев полей',
-    link: '/',
+    link: '/fieldsheating',
   },
   {
     name: 'Проектирование',
@@ -35,8 +36,9 @@ export const headerDataText = [
     text: 'Cпроектирована для российских условий со сроком эксплуатации от 40 до 55 лет без непредвиденных затрат',
   },
   {
-    title: 'Подогревфутбольных полей',
+    title: 'Подогрев футбольных полей',
     text: 'ФЕСПО — российская продукция, разработанная для систем подогрева плоскостных сооружений',
+    baskround: main2,
   },
   {
     title: 'Наша продукция более 15 летна многих стадионах России',

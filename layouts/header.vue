@@ -1,38 +1,49 @@
 <script setup>
 import TheFooter from '~/components/TheFooter.vue';
+import mainImage from "../assets/images/mainPage/main.png"
+import mainImage2 from '../assets/images/hotFieldsPage/main2.png'
+
 import { phoneNumber, menuItem, headerDataText, email, adress } from '~/utils/header/data';
 const route = useRoute();
 const getText = () => {
+  const baskround = ref(`background-image: url('${mainImage}')`);
   if (route.fullPath === '/') {
-    return { title: headerDataText[0].title, text: headerDataText[0].text };
+    baskround.value = `background-image: url('${mainImage}')`
+    return { title: headerDataText[0].title, text: headerDataText[0].text, baskround: baskround.value };
+  }
+  if (route.fullPath === '/fieldsheating') {
+    baskround.value = `background-image: url('${mainImage2}')`
+    return { title: headerDataText[1].title, text: headerDataText[1].text, baskround: baskround.value };
   }
 };
 </script>
 
 <template>
-  <header class="header">
-    <div class="header__box">
-      <nuxt-link to="/"><img class="header__logo" src="../assets/images/mainPage/ФЕСПО.png"
-          alt="fespo_logo" /></nuxt-link>
-      <div class="header__box-menu">
-        <header-item-menu :link="item.link" :name="item.name" v-for="item in menuItem" />
+  <ClientOnly>
+    <header class="header" :style="getText().baskround">
+      <div class="header__box">
+        <NuxtLink to="/"><img class="header__logo" src="../assets/images/mainPage/ФЕСПО.png" alt="fespo_logo" />
+        </NuxtLink>
+        <div class="header__box-menu">
+          <header-item-menu :link="item.link" :name="item.name" v-for="item in menuItem" />
+        </div>
+        <div class="header__box-number">
+          <a :href="`tel:${item.link}`" class="phone-number" v-for="item in phoneNumber">{{ item.text }}</a>
+        </div>
       </div>
-      <div class="header__box-number">
-        <a :href="`tel:${item.link}`" class="phone-number" v-for="item in phoneNumber">{{ item.text }}</a>
+      <div class="title-box">
+        <p class="title">{{ getText().title }}</p>
       </div>
-    </div>
-    <div class="title-box">
-      <p class="title">{{ getText().title }}</p>
-    </div>
-    <div class="text-box">
-      <p class="text">{{ getText().text }}</p>
-    </div>
-    <div class="button-box">
-      <button class="button">ОСТАВИТЬ ЗАЯВКУ</button>
-    </div>
-  </header>
-  <slot />
-  <the-footer />
+      <div class="text-box">
+        <p class="text">{{ getText().text }}</p>
+      </div>
+      <div class="button-box">
+        <button class="button">ОСТАВИТЬ ЗАЯВКУ</button>
+      </div>
+    </header>
+    <slot />
+    <the-footer />
+  </ClientOnly>
 </template>
 
 <style scoped lang="scss">
@@ -40,7 +51,6 @@ const getText = () => {
   width: 1600px;
   margin: 0px auto 0px auto;
   height: 710px;
-  background-image: url('../assets/images/mainPage/main.png');
 }
 
 .header__box {

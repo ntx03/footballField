@@ -6,10 +6,12 @@ definePageMeta({
 </script>
 
 <template>
-    <MainPageFieldHeating />
-    <MainPageDesigning />
-    <MainPageAbout />
-    <MainPageNews />
+    <ClientOnly>
+        <MainPageFieldHeating />
+        <MainPageDesigning />
+        <MainPageAbout />
+        <MainPageNews />
+    </ClientOnly>
 </template>
 
 <style scoped lang="scss"></style>
