@@ -42,7 +42,7 @@ import { phoneNumber, menuItem, email, adress } from '~/utils/header/data';
     width: 1600px;
     display: flex;
     flex-direction: column;
-    margin: 0px auto 0px auto;
+    margin: 120px auto 0px auto;
     //background-image: url('../assets/images/mainPage/Rectangle_51.svg');
     background-repeat: no-repeat;
     background-position: left;

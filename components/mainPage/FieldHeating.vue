@@ -50,7 +50,7 @@
     </section>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .section__container {
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@
 
 .field-heating__container {
     max-width: 1200px;
-    margin: 0 auto 120px 200px;
+    margin: 0 auto 0px 200px;
     display: flex;
     flex-direction: column;
 }

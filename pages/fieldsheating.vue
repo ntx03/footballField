@@ -1,4 +1,6 @@
 <script setup>
+import ErrorDisigning from '~/components/fieldPage/errorDisigning.vue';
+
 definePageMeta({
     layout: "header",
 });
@@ -8,7 +10,18 @@ definePageMeta({
         <MenuUnderHeader />
         <FieldPageCardNavigation />
         <FieldPageHealhtFieldSystem />
+        <FieldPageHealhtFieldSystem2 />
     </div>
+    <MainPageDesigning />
+    <div class="container">
+        <FieldPageMainHeating />
+    </div>
+    <HowMeWork />
+    <div class="container">
+        <ErrorDisigning />
+        <FieldPageOperation />
+    </div>
+    <YourQuestion />
 </template>
 <style scoped lang="scss">
 .container {

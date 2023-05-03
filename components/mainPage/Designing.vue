@@ -23,7 +23,7 @@
     height: 715px;
     display: flex;
     background-image: url('../../assets/images/mainPage/Rectangle_44.png');
-    margin: 0 auto 0 auto;
+    margin: 120px auto 0 auto;
 }
 
 .designing__wrapper-card-slider {
