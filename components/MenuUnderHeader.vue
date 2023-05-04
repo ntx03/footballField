@@ -3,6 +3,8 @@
         <div class="menu__container">
             <NuxtLink to="/" class="menu__main-text">Главная</NuxtLink>
             <p to="/" class="menu__main-text">/</p>
+            <NuxtLink to="/designing" class="menu__main-text" v-show="show">Проектирование</NuxtLink>
+            <p to="/" class="menu__main-text" v-show="show">/</p>
             <p class="menu__page-text">{{ getNamePage() }}</p>
         </div>
     </div>
@@ -10,9 +12,19 @@
     
 <script setup>
 const route = useRoute();
+const show = ref(false);
 const getNamePage = () => {
     if (route.fullPath === '/fieldsheating') {
+        show.value = false;
         return 'Подогрев полей'
+    }
+    if (route.fullPath === '/designing') {
+        show.value = false;
+        return 'Проектирование'
+    }
+    if (route.fullPath === '/pageproject') {
+        show.value = true;
+        return ` Стадион «Торпедо»`;
     }
 }
 </script>

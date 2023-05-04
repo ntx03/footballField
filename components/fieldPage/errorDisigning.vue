@@ -42,7 +42,6 @@
     margin-top: 120px;
     display: flex;
     flex-direction: column;
-    border: 1px red solid;
 }
 
 .title {

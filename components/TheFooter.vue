@@ -43,11 +43,11 @@ import { phoneNumber, menuItem, email, adress } from '~/utils/header/data';
     display: flex;
     flex-direction: column;
     margin: 120px auto 0px auto;
-    //background-image: url('../assets/images/mainPage/Rectangle_51.svg');
+    background-image: url('../assets/images/mainPage/Group_14.png');
     background-repeat: no-repeat;
     background-position: left;
 
-    background-color: $black;
+    background-color: $backround;
     background-size: 50%;
     border-radius: 20px;
 }

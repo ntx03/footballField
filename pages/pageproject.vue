@@ -1,0 +1,31 @@
+<template>
+    <div class="page">
+        <div class="container">
+            <MenuUnderHeader />
+            <ProjectPageProgect />
+        </div>
+    </div>
+</template>
+    
+<script setup>
+definePageMeta({
+    layout: 'header',
+})
+</script>
+    
+<style scoped lang="scss">
+.page {
+    background-image: url(../assets/images/desighingPage/Group_8.png);
+    width: 1600px;
+    margin: 0 auto 0 auto;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.container {
+    width: $mainwidth;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+}
+</style>

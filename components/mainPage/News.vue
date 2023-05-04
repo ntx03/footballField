@@ -27,12 +27,12 @@ import { newsData } from '../../utils/header/data';
 .news {
     width: 1600px;
     display: flex;
-    margin: 0 auto 0 auto;
+    margin: 120px auto 0 auto;
 }
 
 .news__container {
     width: 1200px;
-    margin: 0 auto 120px auto;
+    margin: 0 auto 0px auto;
     display: flex;
     flex-direction: column;
 }
@@ -44,7 +44,7 @@ import { newsData } from '../../utils/header/data';
     font-weight: 400;
     color: $whitetext;
     padding: 0;
-    margin: 60px auto 60px 0;
+    margin: 0px auto 60px 0;
 }
 
 .line {

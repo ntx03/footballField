@@ -10,9 +10,9 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .page {
-  background-color: $black;
+  background-color: $backround;
   width: 100%;
   min-height: 100vh;
   color: $whitetext;

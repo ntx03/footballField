@@ -6,24 +6,45 @@ definePageMeta({
 });
 </script>
 <template>
-    <div class="container">
-        <MenuUnderHeader />
-        <FieldPageCardNavigation />
-        <FieldPageHealhtFieldSystem />
-        <FieldPageHealhtFieldSystem2 />
-    </div>
-    <MainPageDesigning />
-    <div class="container">
-        <FieldPageMainHeating />
-    </div>
-    <HowMeWork />
-    <div class="container">
-        <ErrorDisigning />
-        <FieldPageOperation />
-    </div>
-    <YourQuestion />
+    <ClientOnly>
+        <div class="page">
+            <div class="container ">
+                <MenuUnderHeader />
+                <FieldPageCardNavigation />
+
+                <FieldPageHealhtFieldSystem />
+                <FieldPageHealhtFieldSystem2 />
+            </div>
+        </div>
+        <MainPageDesigning />
+        <div class="container">
+            <FieldPageMainHeating />
+        </div>
+        <HowMeWork />
+        <div class="container">
+            <ErrorDisigning />
+            <FieldPageOperation />
+
+        </div>
+        <YourQuestion />
+        <div class="container">
+            <FieldPageItpAndAutomatic />
+            <FieldPageTestingAndTrials />
+        </div>
+        <MainPageNews />
+    </ClientOnly>
 </template>
 <style scoped lang="scss">
+.page {
+    width: 1600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+    background-image: url(../assets/images/hotFieldsPage/Group_8.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
 .container {
     width: $mainwidth;
     display: flex;
