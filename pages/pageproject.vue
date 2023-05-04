@@ -5,6 +5,8 @@
             <ProjectPageProgect />
         </div>
     </div>
+    <YourQuestion />
+    <Awards />
 </template>
     
 <script setup>

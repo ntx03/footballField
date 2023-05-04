@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     width: 1600px;
-    background-image: url(../assets/images/desighingPage/backround.png);
+    background-image: url(../assets/images/desighingPage/Group_7.png);
     background-repeat: no-repeat;
     background-position: left top;
     margin: 0 auto 0 auto;
