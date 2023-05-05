@@ -12,33 +12,28 @@ export const phoneNumber = [
 
 // const route = useRoute();
 
-export const menuItem = ref([
+export const menuItem = [
   {
     name: 'Подогрев полей',
     link: '/fieldsheating',
-    acvive: false,
   },
   {
     name: 'Проектирование',
     link: '/designing',
-    acvive: false,
   },
   {
     name: 'О компании',
-    link: '/',
-    active: false,
+    link: '/about',
   },
   {
     name: 'Статьи',
-    link: '/',
-    active: false,
+    link: '/articles',
   },
   {
     name: 'Контакты',
-    link: '/',
-    active: false,
+    link: '/contacts',
   },
-]);
+];
 
 export const headerDataText = [
   {

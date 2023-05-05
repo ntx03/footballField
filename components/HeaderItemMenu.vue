@@ -18,7 +18,7 @@ const props = defineProps({
         type: Boolean,
     }
 })
-console.log(props.active);
+
 </script>
 <style scoped lang="scss">
 .header__menu-item {

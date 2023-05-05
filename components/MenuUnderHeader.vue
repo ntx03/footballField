@@ -26,6 +26,18 @@ const getNamePage = () => {
         show.value = true;
         return ` Стадион «Торпедо»`;
     }
+    if (route.fullPath === '/about') {
+        show.value = false;
+        return `О компании`;
+    }
+    if (route.fullPath === '/articles') {
+        show.value = false;
+        return `Статьи`;
+    }
+    if (route.fullPath === '/contacts') {
+        show.value = false;
+        return `Контакты`;
+    }
 }
 </script>
     

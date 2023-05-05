@@ -4,78 +4,47 @@ import mainImage from "../assets/images/mainPage/main.png";
 import mainImage2 from '../assets/images/hotFieldsPage/main2.png';
 import mainImage3 from '../assets/images/desighingPage/main3.png';
 import mainImage4 from '../assets/images/progectPage/headerProgect.png'
+import mainImage6 from '../assets/images/articlesPage/headerImageArticles.png'
+import mainImage5 from '../assets/images/aboutPage/headerImage.png';
+import mainImage7 from '../assets/images/contactsPage/headerImageContacts.png';
 
 
-import { phoneNumber, headerDataText, email, adress } from '~/utils/header/data';
+import { phoneNumber, headerDataText, menuItem } from '~/utils/header/data';
 import { useActiveFootbalPage } from '~/composables/header/useActiveFootbalPage';
 import { useActiveMainPage } from '~/composables/header/useActiveMainPage';
+import { useAboutHeader } from '../composables/header/useAboutHeader';
+import { useArticlesHeader } from '../composables/header/useArticlesHeader';
+import { useContactsHeader } from '../composables/header/useContactsHeader';
 
 const footbal = useActiveFootbalPage();
-const main = useActiveMainPage();
+const designing = useActiveMainPage();
+const about = useAboutHeader();
+const articles = useArticlesHeader();
+const contacts = useContactsHeader();
 
 const route = useRoute();
 const show = ref(true);
-// if (route.fullPath === '/fieldsheating') {
-//   footbal.value = true;
-// } else {
-//   footbal.value = false;
-// }
 
-// if (route.fullPath === '/designing') {
-//   main.value = true;
-// } else {
-//   main.value = false;
-// }
-const count = ref(0);
+route.fullPath === '/fieldsheating' ? footbal.value = true : footbal.value = false;
+route.fullPath === '/designing' ? designing.value = true : designing.value = false;
+route.fullPath === '/about' ? about.value = true : about.value = false;
+route.fullPath === '/articles' ? articles.value = true : articles.value = false;
+route.fullPath === '/contacts' ? contacts.value = true : contacts.value = false;
 
-const click = (e) => {
-  // if (route.fullPath === '/fieldsheating') {
-  //   footbal.value = true;
-  // } else {
-  //   footbal.value = false;
-  // }
-  count.value = count.value + 1;
 
+watch(route, () => {
   if (route.fullPath === '/') {
-    main.value = false;
-    footbal.value = false
+    designing.value = false;
+    footbal.value = false;
   }
-  // route.fullPath === '/' ? footbal.value & main.value = false : null;
   route.fullPath === '/fieldsheating' ? footbal.value = true : footbal.value = false;
-  route.fullPath === '/designing' ? main.value = true : main.value = false;
-  console.log(menuItem.value);
-  console.log(main.value);
-  console.log(footbal.value);
-  console.log(count.value);
-}
+  route.fullPath === '/designing' ? designing.value = true : designing.value = false;
+  route.fullPath === '/about' ? about.value = true : about.value = false;
+  route.fullPath === '/articles' ? articles.value = true : articles.value = false;
+  route.fullPath === '/contacts' ? contacts.value = true : contacts.value = false;
 
-const menuItem = ref([
-  {
-    name: 'Подогрев полей',
-    link: '/fieldsheating',
-    active: footbal.value
-  },
-  {
-    name: 'Проектирование',
-    link: '/designing',
-    acvive: main.value
-  },
-  {
-    name: 'О компании',
-    link: '/',
-    active: false
-  },
-  {
-    name: 'Статьи',
-    link: '/',
-    active: false
-  },
-  {
-    name: 'Контакты',
-    link: '/',
-    active: false
-  },
-]);
+})
+
 
 const getText = () => {
   const baskround = ref(`background-image: url('${mainImage}')`);
@@ -99,8 +68,22 @@ const getText = () => {
     baskround.value = `background-image: url('${mainImage4}')`
     return { title: '', text: '', baskround: baskround.value };
   }
+  if (route.fullPath === '/about') {
+    show.value = false;
+    baskround.value = `background-image: url('${mainImage5}')`
+    return { title: '', text: '', baskround: baskround.value };
+  }
+  if (route.fullPath === '/articles') {
+    show.value = false;
+    baskround.value = `background-image: url('${mainImage6}')`
+    return { title: '', text: '', baskround: baskround.value };
+  }
+  if (route.fullPath === '/contacts') {
+    show.value = false;
+    baskround.value = `background-image: url('${mainImage7}')`
+    return { title: '', text: '', baskround: baskround.value };
+  }
 };
-
 
 </script>
 
@@ -112,8 +95,11 @@ const getText = () => {
             @click="click" />
         </NuxtLink>
         <div class="header__box-menu">
-          <header-item-menu :link="item.link" :name="item.name" :active="item.active" :key="index + count"
-            v-for="item, index in menuItem" @click="click" />
+          <header-item-menu :link="menuItem[0].link" :name="menuItem[0].name" :active="footbal" />
+          <header-item-menu :link="menuItem[1].link" :name="menuItem[1].name" :active="designing" />
+          <header-item-menu :link="menuItem[2].link" :name="menuItem[2].name" :active="about" />
+          <header-item-menu :link="menuItem[3].link" :name="menuItem[3].name" :active="articles" />
+          <header-item-menu :link="menuItem[4].link" :name="menuItem[4].name" :active="contacts" />
         </div>
         <div class="header__box-number">
           <a :href="`tel:${item.link}`" class="phone-number" v-for="item in phoneNumber">{{ item.text }}</a>
@@ -130,7 +116,7 @@ const getText = () => {
       </div>
     </header>
     <slot />
-    <the-footer />
+    <TheFooter />
   </ClientOnly>
 </template>
 
