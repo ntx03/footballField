@@ -17,8 +17,6 @@ const nav = (hash: string) => {
     <div id="heathFieldSystem"></div>
 </template>
     
-
-    
 <style  scoped lang="scss">
 .card {
     display: flex;

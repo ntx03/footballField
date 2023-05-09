@@ -7,8 +7,10 @@ import image6 from '../assets/images/desighingPage/Rectangle_70.png';
 import image7 from '../assets/images/desighingPage/Rectangle_71.png';
 import image8 from '../assets/images/desighingPage/Rectangle_72.png';
 import image9 from '../assets/images/desighingPage/Rectangle_74.png';
-//import image1 from '../assets/images/desighingPage/Rectangle_29.png';
 
+/**
+ * даные для карточек проектов
+ */
 export const dataCards = [
   {
     image: image1,

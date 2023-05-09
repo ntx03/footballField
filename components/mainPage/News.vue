@@ -1,3 +1,7 @@
+<script setup lang='ts'>
+import { newsData } from '../../utils/header/data';
+</script>
+
 <template>
     <section class="news">
         <div class="news__container">
@@ -18,10 +22,6 @@
         </div>
     </section>
 </template>
-    
-<script setup lang='ts'>
-import { newsData } from '../../utils/header/data';
-</script>
     
 <style lang="scss">
 .news {

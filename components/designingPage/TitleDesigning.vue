@@ -1,3 +1,11 @@
+<script setup>
+import { dataCards } from '~/utils/designPageData';
+
+const goProject = () => {
+    navigateTo('/pageproject');
+}
+</script>
+
 <template>
     <section class="section">
         <h2 class="title">проектирование</h2>
@@ -17,14 +25,6 @@
         </div>
     </section>
 </template>
-    
-<script setup>
-import { dataCards } from '~/utils/designPageData';
-
-const goProject = () => {
-    navigateTo('/pageproject');
-}
-</script>
     
 <style scoped lang="scss">
 .section {}

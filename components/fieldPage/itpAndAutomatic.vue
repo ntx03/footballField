@@ -8,8 +8,6 @@
     <div id="testingAndTrials"></div>
 </template>
     
-
-    
 <style lang="scss" scoped>
 .section {
     width: 1200px;

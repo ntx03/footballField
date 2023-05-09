@@ -5,6 +5,7 @@ definePageMeta({
     layout: "header",
 });
 </script>
+
 <template>
     <ClientOnly>
         <div class="page">

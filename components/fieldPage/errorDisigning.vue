@@ -33,10 +33,7 @@
     </section>
 </template>
     
-<script setup lang='ts'>
-
-</script>
-    
+   
 <style scoped lang="scss">
 .section {
     margin-top: 120px;

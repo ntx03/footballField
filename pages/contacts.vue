@@ -1,3 +1,9 @@
+<script setup lang='ts'>
+definePageMeta({
+    layout: 'header'
+})
+</script>
+
 <template>
     <section class="contacts">
         <div class="wrapper">
@@ -6,12 +12,6 @@
         </div>
     </section>
 </template>
-    
-<script setup lang='ts'>
-definePageMeta({
-    layout: 'header'
-})
-</script>
     
 <style lang="scss" scoped>
 .contacts {

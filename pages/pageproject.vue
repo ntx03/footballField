@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+    layout: 'header',
+})
+</script>
+
 <template>
     <div class="page">
         <div class="container">
@@ -9,12 +15,7 @@
     <Awards />
 </template>
     
-<script setup>
-definePageMeta({
-    layout: 'header',
-})
-</script>
-    
+
 <style scoped lang="scss">
 .page {
     background-image: url(../assets/images/desighingPage/Group_8.png);

@@ -53,10 +53,6 @@
     </div>
 </template>
     
-<script setup>
-
-</script>
-    
 <style scoped lang="scss">
 .progect__container {
     display: flex;
@@ -210,4 +206,5 @@
     color: $whitetext;
     font-weight: 400;
     text-align: start;
-}</style>
+}
+</style>

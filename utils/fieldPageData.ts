@@ -8,6 +8,9 @@ import {
   fieldCardNavigation7,
 } from '../utils/importPhoto';
 
+/**
+ * данные для карточек навигации страницы подогрева полей
+ */
 const dataCardNavigation = [
   {
     image: fieldCardNavigation1,

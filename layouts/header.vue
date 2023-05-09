@@ -87,11 +87,11 @@ const getText = () => {
     baskround.value = `background-image: url('${mainImage7}')`
     return { title: '', text: '', baskround: baskround.value };
   }
-  // return { title: headerDataText[0].title, text: headerDataText[0].text, baskround: baskround.value };
 };
-
-
-
+/**
+ * 
+ * закрываем модальное окно
+ */
 const closeEsc = (e) => {
   const page = document.querySelector("body");
   if (e.keyCode === 27) {
@@ -114,7 +114,6 @@ const openCustomPopup = (e) => {
   statePopup.value = false;
 
 }
-
 </script>
 
 <template>

@@ -7,7 +7,9 @@ import articles6 from '../assets/images/articlesPage/Rectangle_93.png';
 import articles7 from '../assets/images/articlesPage/Rectangle_94.png';
 import articles8 from '../assets/images/articlesPage/Rectangle_95.png';
 import articles9 from '../assets/images/articlesPage/Rectangle_96.png';
-
+/**
+ * данные для блока статей
+ */
 export const articlesData = [
   {
     image: articles1,

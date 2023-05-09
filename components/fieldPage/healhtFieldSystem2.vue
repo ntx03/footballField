@@ -1,4 +1,3 @@
-
 <template>
     <section class="section">
         <h2 class="title">какие бывают системы подогрева полей</h2>

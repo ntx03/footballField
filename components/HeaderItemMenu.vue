@@ -1,9 +1,3 @@
-<template>
-    <NuxtLink :to="link" class="header__menu-item">
-        <p class="text" :class="{ 'text_active': active }">{{ name }}</p>
-    </NuxtLink>
-</template>
-
 <script setup>
 const props = defineProps({
     name: {
@@ -18,8 +12,14 @@ const props = defineProps({
         type: Boolean,
     }
 })
-
 </script>
+
+<template>
+    <NuxtLink :to="link" class="header__menu-item">
+        <p class="text" :class="{ 'text_active': active }">{{ name }}</p>
+    </NuxtLink>
+</template>
+
 <style scoped lang="scss">
 .header__menu-item {
     text-decoration: none;

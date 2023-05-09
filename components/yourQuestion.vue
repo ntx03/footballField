@@ -25,6 +25,7 @@ const openCustomPopup = (e) => {
 
 }
 </script>
+
 <template>
     <section class="section">
         <div class="section__container">

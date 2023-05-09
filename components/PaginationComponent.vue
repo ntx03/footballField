@@ -1,3 +1,7 @@
+<script setup>
+const arrPagination = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+</script>
+
 <template>
     <div class="pagination">
         <div class="pagination__container">
@@ -12,10 +16,6 @@
         </div>
     </div>
 </template>
-    
-<script setup lang='ts'>
-const arrPagination = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-</script>
     
 <style scoped lang="scss">
 .pagination {

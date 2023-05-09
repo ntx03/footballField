@@ -1,28 +1,5 @@
-<template>
-    <ClientOnly>
-        <div class="popup" :class="{ popup_none: statePopup }">
-            <div class="popup__container">
-                <h2 class="popup__title">заявка на бесплатную консультацию </h2>
-                <div class="popup__comment-container">
-                    <input type="text" class="input" placeholder="Имя" />
-                    <input type="text" class="input" placeholder="Телефон" />
-                    <input type="text" class="input" placeholder="E-mail" />
-                    <div>
-                        <button class="popup__button" @click="closePopup">оставить заявку</button>
-                        <p class="button__text-footer">Нажимая на кнопку вы соглашаетесь с <span class="span">политикой
-                                конфиденциальности</span></p>
-                    </div>
-                </div>
-
-            </div>
-            <div id="overlay_profile" class="popup__overlay" @click="closePopup"></div>
-        </div>
-    </ClientOnly>
-</template>
-
 <script setup>
 const statePopup = useStatePopup();
-
 
 const closeEsc = (e) => {
     const page = document.querySelector("body");
@@ -45,8 +22,29 @@ function closePopup() {
     statePopup.value = true;
     page.removeEventListener("keydown", closeEsc);
 }
-
 </script>
+
+<template>
+    <ClientOnly>
+        <div class="popup" :class="{ popup_none: statePopup }">
+            <div class="popup__container">
+                <h2 class="popup__title">заявка на бесплатную консультацию </h2>
+                <div class="popup__comment-container">
+                    <input type="text" class="input" placeholder="Имя" />
+                    <input type="text" class="input" placeholder="Телефон" />
+                    <input type="text" class="input" placeholder="E-mail" />
+                    <div>
+                        <button class="popup__button" @click="closePopup">оставить заявку</button>
+                        <p class="button__text-footer">Нажимая на кнопку вы соглашаетесь с <span class="span">политикой
+                                конфиденциальности</span></p>
+                    </div>
+                </div>
+
+            </div>
+            <div id="overlay_profile" class="popup__overlay" @click="closePopup"></div>
+        </div>
+    </ClientOnly>
+</template>
 
 <style scoped lang="scss">
 .popup {

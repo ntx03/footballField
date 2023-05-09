@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+    layout: 'header'
+})
+</script>
+
 <template>
     <section class="articles">
         <div class="articles__container">
@@ -8,12 +14,6 @@
         <MainPageNews />
     </section>
 </template>
-    
-<script setup>
-definePageMeta({
-    layout: 'header'
-})
-</script>
     
 <style lang="scss" scoped>
 .articles {

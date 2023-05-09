@@ -1,3 +1,7 @@
+<script setup>
+import { articlesData } from '../../utils/articlesPageData';
+</script>
+
 <template>
     <div class="wrapper">
         <h2 class="title">Статьи</h2>
@@ -33,10 +37,6 @@
         <PaginationComponent />
     </div>
 </template>
-    
-<script setup>
-import { articlesData } from '../../utils/articlesPageData';
-</script>
     
 <style scoped lang="scss">
 .wrapper {

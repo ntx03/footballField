@@ -69,10 +69,6 @@
     </div>
 </template>
     
-<script setup>
-
-</script>
-    
 <style scoped lang="scss">
 .wrapper {
     margin: 120px auto 0 auto;

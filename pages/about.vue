@@ -1,3 +1,10 @@
+<script setup>
+import News from '~/components/mainPage/News.vue';
+definePageMeta({
+    layout: 'header',
+})
+</script>
+
 <template>
     <section class="about-page">
         <div class="about__container">
@@ -10,13 +17,6 @@
     <YourQuestion />
     <News />
 </template>
-    
-<script setup>
-import News from '~/components/mainPage/News.vue';
-definePageMeta({
-    layout: 'header',
-})
-</script>
     
 <style scoped lang="scss">
 .about-page {

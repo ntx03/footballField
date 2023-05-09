@@ -9,7 +9,6 @@ const play = (e) => {
     }
 
 }
-
 </script>
 
 <template>

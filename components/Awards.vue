@@ -22,10 +22,6 @@
     </section>
 </template>
     
-<script setup>
-
-</script>
-    
 <style scoped lang="scss">
 .section {
     display: flex;

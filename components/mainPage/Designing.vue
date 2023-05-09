@@ -15,10 +15,6 @@
     <div id="mainHeating"></div>
 </template>
     
-<script setup >
-
-</script>
-    
 <style lang="scss" scoped>
 .designing__container {
     width: 1600px;

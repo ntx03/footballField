@@ -1,17 +1,13 @@
 import { mainNews1, mainNews2, mainNews3 } from '../importPhoto';
-//import { useActiveFootbalPage } from '~/composables/header/useActiveFootbalPage';
-//import { useActiveMainPage } from '~/composables/header/useActiveMainPage';
 
 export const phoneNumber = [
   { text: '+7 (495) 888-32-11', link: '+74958883211' },
   { text: '+7 (495) 032-25-18', link: '+74950322518' },
 ];
 
-// const footbal = useActiveFootbalPage();
-// const main = useActiveMainPage();
-
-// const route = useRoute();
-
+/**
+ * данные для меню сайта
+ */
 export const menuItem = [
   {
     name: 'Подогрев полей',

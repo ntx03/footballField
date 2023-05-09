@@ -30,10 +30,6 @@
     </div>
 </template>
     
-<script setup>
-
-</script>
-    
 <style scoped lang="scss">
 .contacts__wrapper {
     margin: 120px auto -60px auto;
