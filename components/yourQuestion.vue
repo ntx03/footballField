@@ -1,5 +1,29 @@
-<script setup lang='ts'>
+<script setup>
+import { getScrollWidth } from '~/utils/header/data';
+const statePopup = useStatePopup();
 
+const closeEsc = (e) => {
+    const page = document.querySelector("body");
+    if (e.keyCode === 27) {
+        // надо вставить конкретный стейт конкретного модального окна
+        statePopup.value = true;
+        page.removeEventListener("keydown", closeEsc);
+        page.style.overflow = "";
+        page.style.paddingRight = `0px`;
+    }
+};
+/**
+* Открываем модальное окно 
+*/
+const openCustomPopup = (e) => {
+    const page = document.querySelector("body");
+    e.preventDefault();
+    page.style.overflow = "hidden";
+    page.style.paddingRight = `${getScrollWidth()}px`
+    page.addEventListener("keydown", closeEsc);
+    statePopup.value = false;
+
+}
 </script>
 <template>
     <section class="section">
@@ -11,7 +35,7 @@
                 <input type="text" class="input" placeholder="Телефон" />
                 <input type="text" class="input" placeholder="E-mail" />
                 <div class="button__container">
-                    <button class="form__button">оставить заявку</button>
+                    <button class="form__button" @click="openCustomPopup">оставить заявку</button>
                     <p class="button__text-footer">Нажимая на кнопку вы соглашаетесь с <span class="span">политикой
                             конфиденциальности</span></p>
                 </div>
@@ -19,9 +43,8 @@
             </div>
         </div>
     </section>
+    <div id="itpAndAutomatic"></div>
 </template>
-    
-
     
 <style scoped lang="scss">
 .section {

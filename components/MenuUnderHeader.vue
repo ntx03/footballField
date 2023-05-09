@@ -13,8 +13,10 @@
 <script setup>
 const route = useRoute();
 const show = ref(false);
+const regex = /fieldsheating/;
 const getNamePage = () => {
-    if (route.fullPath === '/fieldsheating') {
+    const fieldsheatingMatch = regex.test(route.fullPath);
+    if (fieldsheatingMatch) {
         show.value = false;
         return 'Подогрев полей'
     }

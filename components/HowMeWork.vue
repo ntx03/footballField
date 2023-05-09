@@ -45,6 +45,7 @@ const play = (e) => {
             </div>
         </div>
     </section>
+    <div id="errorDisidning"></div>
 </template>
 
 <style scoped lang="scss">

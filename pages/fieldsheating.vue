@@ -11,7 +11,6 @@ definePageMeta({
             <div class="container ">
                 <MenuUnderHeader />
                 <FieldPageCardNavigation />
-
                 <FieldPageHealhtFieldSystem />
                 <FieldPageHealhtFieldSystem2 />
             </div>
@@ -24,7 +23,6 @@ definePageMeta({
         <div class="container">
             <ErrorDisigning />
             <FieldPageOperation />
-
         </div>
         <YourQuestion />
         <div class="container">

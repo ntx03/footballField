@@ -1,15 +1,23 @@
+<script setup lang='ts'>
+import { dataCardNavigation } from '~/utils/fieldPageData';
+
+const nav = (hash: string) => {
+    navigateTo({ path: '/fieldsheating', hash: `#${hash}` })
+}
+</script>
+
 <template>
     <div class="card__container">
-        <div class="card__box" :style="`background-image: url(${item.image})`" v-for="item in dataCardNavigation">
+        <div class="card__box" :style="`background-image: url(${item.image})`" v-for="item in dataCardNavigation"
+            @click="nav(item.hash)">
             <div class="overlay"></div>
             <p class="card__text">{{ item.text }}</p>
         </div>
     </div>
+    <div id="heathFieldSystem"></div>
 </template>
     
-<script setup lang='ts'>
-import { dataCardNavigation } from '~/utils/fieldPageData';
-</script>
+
     
 <style  scoped lang="scss">
 .card {
@@ -62,7 +70,6 @@ import { dataCardNavigation } from '~/utils/fieldPageData';
     margin: 0;
     padding: 0;
     text-align: center;
-    z-index: 1;
     transition: 0.4s;
 }
 

@@ -8,9 +8,11 @@
                     alt="газон футбольного поля">
                 <img class="designing__image" src="../../assets/images/mainPage/Rectangle_31.png" alt="стадион">
             </div>
-            <button class="button">ПОСМОТРЕТЬ ВСЕ ПРОЕКТЫ</button>
+            <button class="button" @click="() => navigateTo('/designing')">ПОСМОТРЕТЬ ВСЕ ПРОЕКТЫ</button>
         </div>
+
     </section>
+    <div id="mainHeating"></div>
 </template>
     
 <script setup >

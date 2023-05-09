@@ -41,7 +41,7 @@
                         г. Москва).</p>
                     <p class="field-heating__image-description-text field-heating__image-description-text_w500">Первая в
                         России система для стандартного футбольного поля размерами 110 х72 метра</p>
-                    <button class="button">ПОДРОБНЕЕ</button>
+                    <button class="button" @click="() => navigateTo('/fieldsheating')">ПОДРОБНЕЕ</button>
                 </div>
                 <img class="field-heating__image" src="../../assets/images/mainPage/Rectangle_27.png"
                     alt="трава на футбольном поле" />

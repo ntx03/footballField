@@ -15,6 +15,7 @@ import { useActiveMainPage } from '~/composables/header/useActiveMainPage';
 import { useAboutHeader } from '../composables/header/useAboutHeader';
 import { useArticlesHeader } from '../composables/header/useArticlesHeader';
 import { useContactsHeader } from '../composables/header/useContactsHeader';
+import { getScrollWidth } from '../utils/header/data';
 
 const footbal = useActiveFootbalPage();
 const designing = useActiveMainPage();
@@ -22,8 +23,10 @@ const about = useAboutHeader();
 const articles = useArticlesHeader();
 const contacts = useContactsHeader();
 
+const statePopup = useStatePopup();
 const route = useRoute();
 const show = ref(true);
+const regex = /fieldsheating/;
 
 route.fullPath === '/fieldsheating' ? footbal.value = true : footbal.value = false;
 route.fullPath === '/designing' ? designing.value = true : designing.value = false;
@@ -31,13 +34,13 @@ route.fullPath === '/about' ? about.value = true : about.value = false;
 route.fullPath === '/articles' ? articles.value = true : articles.value = false;
 route.fullPath === '/contacts' ? contacts.value = true : contacts.value = false;
 
-
 watch(route, () => {
+  const fieldsheatingMatch = regex.test(route.fullPath);
   if (route.fullPath === '/') {
     designing.value = false;
     footbal.value = false;
   }
-  route.fullPath === '/fieldsheating' ? footbal.value = true : footbal.value = false;
+  fieldsheatingMatch ? footbal.value = true : footbal.value = false;
   route.fullPath === '/designing' ? designing.value = true : designing.value = false;
   route.fullPath === '/about' ? about.value = true : about.value = false;
   route.fullPath === '/articles' ? articles.value = true : articles.value = false;
@@ -47,13 +50,14 @@ watch(route, () => {
 
 
 const getText = () => {
+  const fieldsheatingMatch = regex.test(route.fullPath);
   const baskround = ref(`background-image: url('${mainImage}')`);
   if (route.fullPath === '/') {
     show.value = true;
     baskround.value = `background-image: url('${mainImage}')`
     return { title: headerDataText[0].title, text: headerDataText[0].text, baskround: baskround.value };
   }
-  if (route.fullPath === '/fieldsheating') {
+  if (fieldsheatingMatch) {
     show.value = true;
     baskround.value = `background-image: url('${mainImage2}')`
     return { title: headerDataText[1].title, text: headerDataText[1].text, baskround: baskround.value };
@@ -83,7 +87,33 @@ const getText = () => {
     baskround.value = `background-image: url('${mainImage7}')`
     return { title: '', text: '', baskround: baskround.value };
   }
+  // return { title: headerDataText[0].title, text: headerDataText[0].text, baskround: baskround.value };
 };
+
+
+
+const closeEsc = (e) => {
+  const page = document.querySelector("body");
+  if (e.keyCode === 27) {
+    // надо вставить конкретный стейт конкретного модального окна
+    statePopup.value = true;
+    page.removeEventListener("keydown", closeEsc);
+    page.style.overflow = "";
+    page.style.paddingRight = `0px`;
+  }
+};
+/**
+* Открываем модальное окно 
+*/
+const openCustomPopup = (e) => {
+  const page = document.querySelector("body");
+  e.preventDefault();
+  page.style.overflow = "hidden";
+  page.style.paddingRight = `${getScrollWidth()}px`
+  page.addEventListener("keydown", closeEsc);
+  statePopup.value = false;
+
+}
 
 </script>
 
@@ -91,8 +121,7 @@ const getText = () => {
   <ClientOnly>
     <header class="header" :class="{ 'header_heigth500': !show }" :style="getText().baskround">
       <div class="header__box">
-        <NuxtLink to="/"><img class="header__logo" src="../assets/images/mainPage/ФЕСПО.png" alt="fespo_logo"
-            @click="click" />
+        <NuxtLink to="/"><img class="header__logo" src="../assets/images/mainPage/ФЕСПО.png" alt="fespo_logo" />
         </NuxtLink>
         <div class="header__box-menu">
           <header-item-menu :link="menuItem[0].link" :name="menuItem[0].name" :active="footbal" />
@@ -112,7 +141,7 @@ const getText = () => {
         <p class="text">{{ getText().text }}</p>
       </div>
       <div class="button-box" v-show="show">
-        <button class="button">ОСТАВИТЬ ЗАЯВКУ</button>
+        <button class="button" @click="openCustomPopup">ОСТАВИТЬ ЗАЯВКУ</button>
       </div>
     </header>
     <slot />

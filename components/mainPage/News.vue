@@ -13,7 +13,7 @@
                 </div>
                 <div class="line"></div>
             </div>
-            <button class="button">ВСЕ СТАТЬИ</button>
+            <button class="button" @click="() => navigateTo('/articles')">ВСЕ СТАТЬИ</button>
 
         </div>
     </section>
