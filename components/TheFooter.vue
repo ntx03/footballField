@@ -35,7 +35,7 @@ watch(route, () => {
         </div>
         <div class="footer__card-container" v-show="show">
             <div class="footer__image-container">
-                <img class="place-image" src="../assets/images/mainPage/Rectangle 41.png"
+                <img class="place-image" src="../assets/images/mainPage/Rectangle_41.png"
                     alt="карта с местоположением компании" />
                 <img class="indicator-image" src="../assets/images/mainPage/ic_baseline-place.svg" alt="указатель" />
             </div>

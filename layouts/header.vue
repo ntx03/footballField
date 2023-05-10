@@ -31,6 +31,7 @@ const regexProgect = /pageprogect/;
 const regexDesigning = /designing/;
 const regexArticles = /articles/;
 const articlesMatch = regexArticles.test(route.fullPath);
+
 route.fullPath === '/fieldsheating' ? footbal.value = true : footbal.value = false;
 route.fullPath === '/designing' ? designing.value = true : designing.value = false;
 route.fullPath === '/about' ? about.value = true : about.value = false;
