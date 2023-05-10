@@ -1,4 +1,4 @@
-<script setup>
+<script setup >
 
 const play = (e) => {
     const videoPlayer = document.querySelector('#video');
@@ -29,8 +29,10 @@ const play = (e) => {
 
             <div class="container">
                 <div class="video-player">
-                    <video id="video" class="video">
-                        <source src="../assets/video/mixkit-football-stadium-aerial-shot-4262.mp4" type="video/mp4">
+                    <video id="video" class="video" poster="../assets/images/aboutPage/headerImage.png">
+                        <source
+                            src="../assets/video/fon-futbol-futaj-dlya-video-montaja-myac-i-futbolnoe-pole-besplatnie-f_(VIDEOMIN.NET).mp4"
+                            type="video/mp4">
                         Извините, но видео не поддерживается вашим браузером
                     </video>
                     <div class="player-controls">
@@ -116,12 +118,16 @@ const play = (e) => {
     max-height: 400px;
     border-radius: 12px;
     position: relative;
+
     //  overflow: hidden;
+    &:hover .player-controls {
+        opacity: 1;
+    }
 }
 
 .video {
-    width: 100%;
-    height: 100%;
+    width: 790px;
+    height: 400px;
     border-radius: 12px;
     object-position: center;
     object-fit: cover;
@@ -140,6 +146,9 @@ const play = (e) => {
     position: absolute;
     top: 45%;
     left: 45%;
+    opacity: 0;
+    transition: 0.3s;
+
 }
 
 .play-buton {
@@ -155,8 +164,12 @@ const play = (e) => {
 }
 
 .icon-play-button {
-    width: 60px;
-    height: 60px;
+
+    &:hover {
+        opacity: 1;
+        width: 60px;
+        height: 60px;
+    }
 
 }
 

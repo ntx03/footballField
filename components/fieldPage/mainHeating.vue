@@ -1,4 +1,3 @@
-
 <template>
     <section class="section">
         <h2 class="title">важное о концепции подогрева</h2>

@@ -1,8 +1,13 @@
 <script setup>
-import { dataCards } from '~/utils/designPageData';
+import { useStateCardsDesigning } from '../../composables/designing/useCardsDesigning';
+import { useStateProgect } from '~/composables/pageProgest/useProgect';
+const cardsDesigning = useStateCardsDesigning();
+const progect = useStateProgect();
 
-const goProject = () => {
-    navigateTo('/pageproject');
+const goProject = (image) => {
+    progect.value[0].image = image;
+    navigateTo({ path: '/pageproject', hash: '#pageprogect' });
+
 }
 </script>
 
@@ -15,7 +20,7 @@ const goProject = () => {
             клубов,
             площадки для пляжных видов спорта, частные заказы.</p>
         <div class="cards__container">
-            <div class="card__container" v-for="item in dataCards" @click="goProject">
+            <div class="card__container" v-for="item in cardsDesigning" @click="goProject(item.image)">
                 <img class="image" :src="item.image" :alt="item.alt">
                 <div class="text__box">
                     <h3 class="card__title">{{ item.title }}</h3>
@@ -57,6 +62,7 @@ const goProject = () => {
     width: 100%;
     gap: 30px;
     margin: 60px auto 0 auto;
+    transition: 0.5s;
 }
 
 .card__container {

@@ -27,23 +27,28 @@ const statePopup = useStatePopup();
 const route = useRoute();
 const show = ref(true);
 const regex = /fieldsheating/;
-
+const regexProgect = /pageprogect/;
+const regexDesigning = /designing/;
+const regexArticles = /articles/;
+const articlesMatch = regexArticles.test(route.fullPath);
 route.fullPath === '/fieldsheating' ? footbal.value = true : footbal.value = false;
 route.fullPath === '/designing' ? designing.value = true : designing.value = false;
 route.fullPath === '/about' ? about.value = true : about.value = false;
-route.fullPath === '/articles' ? articles.value = true : articles.value = false;
+articlesMatch ? articles.value = true : articles.value = false;
 route.fullPath === '/contacts' ? contacts.value = true : contacts.value = false;
 
 watch(route, () => {
   const fieldsheatingMatch = regex.test(route.fullPath);
+  const designingMatch = regexDesigning.test(route.fullPath);
+  const articlesMatch = regexArticles.test(route.fullPath);
   if (route.fullPath === '/') {
     designing.value = false;
     footbal.value = false;
   }
   fieldsheatingMatch ? footbal.value = true : footbal.value = false;
-  route.fullPath === '/designing' ? designing.value = true : designing.value = false;
+  designingMatch ? designing.value = true : designing.value = false;
   route.fullPath === '/about' ? about.value = true : about.value = false;
-  route.fullPath === '/articles' ? articles.value = true : articles.value = false;
+  articlesMatch ? articles.value = true : articles.value = false;
   route.fullPath === '/contacts' ? contacts.value = true : contacts.value = false;
 
 })
@@ -51,6 +56,9 @@ watch(route, () => {
 
 const getText = () => {
   const fieldsheatingMatch = regex.test(route.fullPath);
+  const progectMatch = regexProgect.test(route.fullPath);
+  const designingMatch = regexDesigning.test(route.fullPath);
+  const articlesMatch = regexArticles.test(route.fullPath);
   const baskround = ref(`background-image: url('${mainImage}')`);
   if (route.fullPath === '/') {
     show.value = true;
@@ -62,12 +70,12 @@ const getText = () => {
     baskround.value = `background-image: url('${mainImage2}')`
     return { title: headerDataText[1].title, text: headerDataText[1].text, baskround: baskround.value };
   }
-  if (route.fullPath === '/designing') {
+  if (designingMatch) {
     show.value = true;
     baskround.value = `background-image: url('${mainImage3}')`
     return { title: headerDataText[2].title, text: headerDataText[2].text, baskround: baskround.value };
   }
-  if (route.fullPath === '/pageproject') {
+  if (progectMatch) {
     show.value = false;
     baskround.value = `background-image: url('${mainImage4}')`
     return { title: '', text: '', baskround: baskround.value };
@@ -77,7 +85,7 @@ const getText = () => {
     baskround.value = `background-image: url('${mainImage5}')`
     return { title: '', text: '', baskround: baskround.value };
   }
-  if (route.fullPath === '/articles') {
+  if (articlesMatch) {
     show.value = false;
     baskround.value = `background-image: url('${mainImage6}')`
     return { title: '', text: '', baskround: baskround.value };
@@ -118,7 +126,7 @@ const openCustomPopup = (e) => {
 
 <template>
   <ClientOnly>
-    <header class="header" :class="{ 'header_heigth500': !show }" :style="getText().baskround">
+    <header class="header" :class="{ 'header_heigth500': !show }" :style="getText().baskround" id="container">
       <div class="header__box">
         <NuxtLink to="/"><img class="header__logo" src="../assets/images/mainPage/ФЕСПО.png" alt="fespo_logo" />
         </NuxtLink>

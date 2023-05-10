@@ -1,3 +1,7 @@
+<script setup>
+import { useStateProgect } from '~/composables/pageProgest/useProgect';
+const progect = useStateProgect();
+</script>
 <template>
     <div class="progect__container">
         <div class="progect-description__container">
@@ -28,10 +32,11 @@
                     <p class="description__text">Запланированное завершение</p>
                 </div>
             </div>
-            <button class="description__button" @click="() => navigateTo('/designing')">посмотреть другие проекты</button>
+            <button class="description__button"
+                @click="() => navigateTo({ path: '/designing', hash: '#designing' })">посмотреть другие проекты</button>
         </div>
         <div class="progect-image__container">
-            <img class="progect__image" src="../../assets/images/progectPage/stadionImage.png" alt="стадион">
+            <img class="progect__image" :src="progect[0].image" alt="стадион">
         </div>
     </div>
     <div class="guarantee__container">
@@ -156,6 +161,7 @@
     margin: 0;
     border-radius: 12px;
     position: relative;
+    overflow: hidden;
 }
 
 .progect__image {
@@ -165,6 +171,7 @@
     top: 0;
     left: 0;
     object-fit: cover;
+    overflow: hidden;
 }
 
 .guarantee__container {

@@ -14,18 +14,24 @@
 const route = useRoute();
 const show = ref(false);
 const regex = /fieldsheating/;
+const regexProgect = /pageproject/;
+const regexDesigning = /designing/;
+const regexArticles = /articles/;
 
 const getNamePage = () => {
     const fieldsheatingMatch = regex.test(route.fullPath);
+    const pageProgectMatch = regexProgect.test(route.fullPath);
+    const designingMatch = regexDesigning.test(route.fullPath);
+    const articlesMatch = regexArticles.test(route.fullPath);
     if (fieldsheatingMatch) {
         show.value = false;
         return 'Подогрев полей'
     }
-    if (route.fullPath === '/designing') {
+    if (designingMatch) {
         show.value = false;
         return 'Проектирование'
     }
-    if (route.fullPath === '/pageproject') {
+    if (pageProgectMatch) {
         show.value = true;
         return ` Стадион «Торпедо»`;
     }
@@ -33,7 +39,7 @@ const getNamePage = () => {
         show.value = false;
         return `О компании`;
     }
-    if (route.fullPath === '/articles') {
+    if (articlesMatch) {
         show.value = false;
         return `Статьи`;
     }

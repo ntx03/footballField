@@ -5,13 +5,12 @@ definePageMeta({
 </script>
 
 <template>
-    <section class="articles">
+    <section class="articles" id="articles">
         <div class="articles__container">
             <MenuUnderHeader />
             <ArticlesComponent />
         </div>
         <YourQuestion />
-        <MainPageNews />
     </section>
 </template>
     

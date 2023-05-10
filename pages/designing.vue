@@ -7,7 +7,7 @@ definePageMeta({
 
 <template>
     <ClientOnly>
-        <div class="backround">
+        <div class="backround" id="designing">
             <div class="container">
                 <MenuUnderHeader />
                 <DesigningPageTitleDesigning />

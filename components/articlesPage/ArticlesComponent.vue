@@ -1,5 +1,19 @@
 <script setup>
 import { articlesData } from '../../utils/articlesPageData';
+import image from '../../assets/images/articlesPage/Rectangle_91.png'
+const newsData = ref({
+    data: '4 февраля 2023',
+    title: 'Первая в России система для стандартного футбольного поля размерами 110 х72 метра',
+    description: ['Территория «Торпедо» переживает второе рождение. Исторический стадион перестраивается по самым современным стандартам комфорта и безопасности. Его превратят в футбольную арену для проведения соревнований всероссийского и международного уровня – IV (высшей) категории по классификации УЕФА и I категории по классификации РФС.', 'Первая в России система для стандартного футбольного поля размерами 110 х72 метра, спроектированная под тепловую нагрузку 1 Гкал(поле №4 с искусственным газоном на стадионе им Э.А.Стрельцова(Торпедо) г.Москва)', 'Рядом со стадионом появятся 3 тренировочных поля – полноразмерное (105х68 м) и 2 уменьшенных (60х40 м) с искусственным газоном класса FIFA Quality Pro.'],
+    image: image,
+})
+const chooseNews = (item) => {
+    newsData.value.data = item.data;
+    newsData.value.title = item.title;
+    newsData.value.description = item.description;
+    newsData.value.image = item.image;
+    navigateTo({ path: '/articles', hash: '#articles' })
+}
 </script>
 
 <template>
@@ -7,26 +21,17 @@ import { articlesData } from '../../utils/articlesPageData';
         <h2 class="title">Статьи</h2>
         <div class="article__container">
             <div class="title-image__container">
-                <img class="image" src="../../assets/images/articlesPage/Rectangle_91.png" alt="Стадион">
+                <img class="image" :src="newsData.image" alt="Стадион">
             </div>
             <div class="article-description__container">
-                <p class="description__data">4 февраля 2023</p>
-                <p class="description__title">Первая в России система для стандартного футбольного поля размерами 110 х72
-                    метра</p>
-                <p class="description__text">Территория «Торпедо» переживает второе рождение. Исторический стадион
-                    перестраивается по самым современным стандартам комфорта и безопасности. Его превратят в футбольную
-                    арену для проведения соревнований всероссийского и международного уровня – IV (высшей) категории по
-                    классификации УЕФА и I категории по классификации РФС.</p>
-                <p class="description__text">Первая в России система для стандартного футбольного поля размерами 110 х72
-                    метра, спроектированная под тепловую нагрузку 1 Гкал (поле №4 с искусственным газоном на стадионе им
-                    Э.А. Стрельцова (Торпедо) г. Москва)</p>
-                <p class="description__text">Рядом со стадионом появятся 3 тренировочных поля – полноразмерное (105х68 м) и
-                    2 уменьшенных (60х40 м) с искусственным газоном класса FIFA Quality Pro.</p>
+                <p class="description__data">{{ newsData.data }}</p>
+                <p class="description__title">{{ newsData.title }}</p>
+                <p class="description__text" v-for="item in newsData.description">{{ item }}</p>
             </div>
         </div>
 
         <div class="cards__container">
-            <div class="card__container" v-for="item in articlesData">
+            <div class="card__container" v-for="item in articlesData" @click="chooseNews(item)">
                 <div class="card-image__container">
                     <img class="image" :src="item.image" :alt="item.title">
                 </div>
@@ -80,6 +85,7 @@ import { articlesData } from '../../utils/articlesPageData';
     left: 0;
     object-fit: cover;
     position: absolute;
+    border-radius: 12px;
 }
 
 .article-description__container {
@@ -131,6 +137,7 @@ import { articlesData } from '../../utils/articlesPageData';
     width: 100%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
 }
 
@@ -140,6 +147,7 @@ import { articlesData } from '../../utils/articlesPageData';
     border-radius: 12px;
     padding-top: 60%;
     margin: 0 auto 0 auto;
+    border-radius: 12px;
 }
 
 .card__title {
