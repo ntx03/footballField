@@ -1,15 +1,3 @@
-<template>
-    <div class="menu">
-        <div class="menu__container">
-            <NuxtLink to="/" class="menu__main-text">Главная</NuxtLink>
-            <p to="/" class="menu__main-text">/</p>
-            <NuxtLink to="/designing" class="menu__main-text" v-show="show">Проектирование</NuxtLink>
-            <p to="/" class="menu__main-text" v-show="show">/</p>
-            <p class="menu__page-text">{{ getNamePage() }}</p>
-        </div>
-    </div>
-</template>
-    
 <script setup>
 const route = useRoute();
 const show = ref(false);
@@ -49,10 +37,22 @@ const getNamePage = () => {
     }
 }
 </script>
+
+<template>
+    <div class="menu">
+        <div class="menu__container">
+            <NuxtLink to="/" class="menu__main-text">Главная</NuxtLink>
+            <p to="/" class="menu__main-text">/</p>
+            <NuxtLink to="/designing" class="menu__main-text" v-show="show">Проектирование</NuxtLink>
+            <p to="/" class="menu__main-text" v-show="show">/</p>
+            <p class="menu__page-text">{{ getNamePage() }}</p>
+        </div>
+    </div>
+</template>
     
 <style scoped lang="scss">
 .menu {
-    width: 1600px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 40px auto 0 auto;

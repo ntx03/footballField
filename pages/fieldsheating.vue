@@ -13,12 +13,12 @@ const goStartPage = () => {
 <template>
     <ClientOnly>
         <div class="page">
-            <!-- <div class="container"> -->
-            <MenuUnderHeader />
-            <FieldPageCardNavigation />
-            <FieldPageHealhtFieldSystem />
-            <FieldPageHealhtFieldSystem2 />
-            <!-- </div> -->
+            <div class="container">
+                <MenuUnderHeader />
+                <FieldPageCardNavigation />
+                <FieldPageHealhtFieldSystem />
+                <FieldPageHealhtFieldSystem2 />
+            </div>
 
             <MainPageDesigning />
             <div class="container">
@@ -35,7 +35,7 @@ const goStartPage = () => {
                 <FieldPageTestingAndTrials />
             </div>
             <MainPageNews />
-            <!-- <button class="button__start-page" @click="goStartPage">B начало</button> -->
+            <button class="button__start-page" @click="goStartPage">B начало</button>
         </div>
     </ClientOnly>
 </template>

@@ -32,13 +32,14 @@ definePageMeta({
     padding: 0;
     min-height: 1000px;
     background-color: $backround;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-    width: $mainwidth;
+    width: 1200px;
     display: flex;
     flex-direction: column;
-    margin: 0 auto 0 auto;
-
+    margin: auto;
 }
 </style>
