@@ -20,7 +20,7 @@
     
 <style lang="scss">
 .about {
-    width: 1600px;
+    width: 100%;
     display: flex;
     margin: 0 auto 0 auto;
 }

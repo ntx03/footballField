@@ -1,6 +1,6 @@
 
 <template>
-    <section class="section">
+    <section class="section" id="heathFieldSystem2">
         <h2 class="title">Что такое система подогрева полей</h2>
         <p class="subtitle">Комплексное технологическое решение, предназначенное для использования спортивного сооружения в
             полной мере, в период межсезонья.</p>
@@ -23,7 +23,6 @@
                     при замене типа покрытия или длины ворса</p>
             </div>
         </div>
-        <div id="heathFieldSystem2"></div>
     </section>
 </template>
     
@@ -32,6 +31,7 @@
     display: flex;
     flex-direction: column;
     margin: 120px auto 0 auto;
+
 }
 
 .title {

@@ -165,6 +165,7 @@ const openCustomPopup = (e) => {
 
   &_heigth500 {
     height: 500px;
+
   }
 }
 

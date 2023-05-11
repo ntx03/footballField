@@ -76,7 +76,6 @@ watch(route, () => {
     background-image: url('../assets/images/mainPage/Group_14.png');
     background-repeat: no-repeat;
     background-position: left;
-
     background-color: $backround;
     background-size: 50%;
     border-radius: 20px;
@@ -93,7 +92,6 @@ watch(route, () => {
     font-weight: 400;
     font-size: 32px;
     line-height: 40px;
-    //max-width: 570px;
     padding: 0;
     margin: 0;
     color: $whitetext;

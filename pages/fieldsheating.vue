@@ -6,19 +6,19 @@ definePageMeta({
 });
 
 const goStartPage = () => {
-    navigateTo({ to: '/fieldsheating', hash: '#container' })
+    window.scrollTo(0, 0);
 }
 </script>
 
 <template>
     <ClientOnly>
         <div class="page">
-            <div class="container">
-                <MenuUnderHeader />
-                <FieldPageCardNavigation />
-                <FieldPageHealhtFieldSystem />
-                <FieldPageHealhtFieldSystem2 />
-            </div>
+            <!-- <div class="container"> -->
+            <MenuUnderHeader />
+            <FieldPageCardNavigation />
+            <FieldPageHealhtFieldSystem />
+            <FieldPageHealhtFieldSystem2 />
+            <!-- </div> -->
 
             <MainPageDesigning />
             <div class="container">
@@ -35,7 +35,7 @@ const goStartPage = () => {
                 <FieldPageTestingAndTrials />
             </div>
             <MainPageNews />
-            <button class="button__start-page" @click="goStartPage">B начало</button>
+            <!-- <button class="button__start-page" @click="goStartPage">B начало</button> -->
         </div>
     </ClientOnly>
 </template>
@@ -61,7 +61,7 @@ const goStartPage = () => {
 .button__start-page {
     position: fixed;
     top: 80%;
-    right: 20vh;
+    right: 15vh;
     background-color: $yellow;
     border-radius: 12px;
     height: 40px;

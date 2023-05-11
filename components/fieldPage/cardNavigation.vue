@@ -7,14 +7,14 @@ const nav = (hash: string) => {
 </script>
 
 <template>
-    <div class="card__container">
+    <div class="card__container" id="heathFieldSystem">
         <div class="card__box" :style="`background-image: url(${item.image})`" v-for="item in dataCardNavigation"
             @click="nav(item.hash)">
             <div class="overlay"></div>
             <p class="card__text">{{ item.text }}</p>
         </div>
     </div>
-    <div id="heathFieldSystem"></div>
+    <!-- <div id="heathFieldSystem"></div> -->
 </template>
     
 <style  scoped lang="scss">
@@ -22,7 +22,6 @@ const nav = (hash: string) => {
     display: flex;
     width: 1600px;
     margin: 120px auto 0px auto;
-
 }
 
 .card__container {

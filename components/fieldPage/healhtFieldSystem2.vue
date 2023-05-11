@@ -48,6 +48,7 @@
     display: flex;
     flex-direction: column;
     margin: 120px auto 0 auto;
+
 }
 
 .subtitle__box {
